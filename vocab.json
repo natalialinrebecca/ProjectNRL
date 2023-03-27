@@ -1,0 +1,30 @@
+[
+  {
+    "newWord": "word",
+    "definition": "def",
+    "translation": "tra",
+    "pronunciation": "pro",
+    "links": "links"
+  },
+  {
+    "newWord": "fg",
+    "definition": "gf",
+    "translation": "fg",
+    "pronunciation": "fg",
+    "links": "fg"
+  },
+  {
+    "newWord": "airpod",
+    "definition": "tech",
+    "translation": "tec",
+    "pronunciation": "tel",
+    "links": "cable"
+  },
+  {
+    "newWord": "agua",
+    "definition": "liquido",
+    "translation": "water",
+    "pronunciation": "awa",
+    "links": "tomar"
+  }
+]

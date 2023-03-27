@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="274.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.HelloController">
+      <children>
+          <Label fx:id="welcomeText" layoutX="20.0" layoutY="17.0" prefHeight="28.0" prefWidth="61.0" text="Contacts">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+          <Button layoutX="318.0" layoutY="232.0" onAction="#onHelloButtonClick" text="Go to screen 2" />
+      <TableView fx:id="contactsTable" layoutX="29.0" layoutY="51.0" prefHeight="208.0" prefWidth="200.0" />
+      <Label layoutX="248.0" layoutY="53.0" prefHeight="17.0" prefWidth="37.0" text="Name" />
+      <Label layoutX="247.0" layoutY="91.0" prefHeight="17.0" prefWidth="30.0" text="Age" />
+      <Label layoutX="247.0" layoutY="128.0" text="Number" />
+      <TextField fx:id="cNameTxt" layoutX="289.0" layoutY="49.0" prefWidth="137.0" />
+      <TextField fx:id="cAgeTxt" layoutX="289.0" layoutY="87.0" prefHeight="25.0" prefWidth="136.0" />
+      <TextField fx:id="cNumberTxt" layoutX="299.0" layoutY="126.0" prefHeight="25.0" prefWidth="126.0" />
+      <Button layoutX="245.0" layoutY="172.0" mnemonicParsing="false" onAction="#saveBtn" text="Save" />
+      </children>
+   </AnchorPane>

@@ -27,36 +27,19 @@ public class LoginController {
 public void initialize() throws IOException {
 
 }
-    private void loadUser() {
-        //load user from saved file.
-        //Open and read Json for any previously saved data.
+    @FXML
+    private void checkLogin() throws IOException {
+        if(cUsernameTxt.getText().equals(cUsernameTxt.getText())) {
+            wrongLogin.setText("Welcome!");
+            StartApplication.setRoot("vocab-view");
+        }
 
-        Gson gson = new Gson();
-        try (Reader reader = new FileReader("login.json")) {
-            //convert JSON file to Java Object
-            ArrayList<Login> imports = gson.fromJson(reader, new TypeToken<ArrayList<Login>>() {
-            }.getType());
-            login = FXCollections.observableArrayList(imports);
-        } catch (IOException e) {
-            e.printStackTrace();
+        else if(cUsernameTxt.getText().isEmpty()) {
+            wrongLogin.setText("Please enter a username.");
+        }
+
+        else {
+            wrongLogin.setText("Wrong username");
         }
     }
-
-        @FXML
-        private void checkLogin() throws IOException {
-
-
-            if(cUsernameTxt.getText().equals(cUsernameTxt.getText())) {
-                wrongLogin.setText("Welcome!");
-                StartApplication.setRoot("vocab-view");
-            }
-
-            else if(cUsernameTxt.getText().isEmpty()) {
-                wrongLogin.setText("Please enter a username.");
-            }
-
-            else {
-                wrongLogin.setText("Wrong username");
-            }
-        }
-    }
+}

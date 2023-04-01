@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: B3DAF4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.GameController">
+      <children>
+          <Label fx:id="welcomeText" layoutX="124.0" layoutY="34.0" prefHeight="30.0" prefWidth="383.0" text="PLAY &amp; TEST YOUR KNOWLEDGE!">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+          <Button layoutX="507.0" layoutY="460.0" onAction="#myvocabBtn" text="MY VOCAB" />
+      <Button layoutX="25.0" layoutY="460.0" onAction="#signoutBtn" text="SIGN OUT" />
+      <Button layoutX="195.0" layoutY="88.0" mnemonicParsing="false" onAction="#changewordBtn" prefHeight="47.0" prefWidth="218.0" style="-fx-background-color: B7F3D8;" text="PRESS, THEN PLAY!">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Label layoutX="50.0" layoutY="234.0" text="Write a letter:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="input" layoutX="205.0" layoutY="229.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let3" layoutX="177.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let6" layoutX="368.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let5" layoutX="304.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let4" layoutX="240.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let7" layoutX="430.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let8" layoutX="492.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let1" layoutX="50.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="let2" layoutX="113.0" layoutY="351.0" prefHeight="43.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="174.0" layoutY="293.0" prefHeight="33.0" prefWidth="253.0" text="Guess what word it is!">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="289.0" layoutY="228.0" mnemonicParsing="false" onAction="#CheckInput" text="Enter letter">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="125.0" layoutY="166.0" prefHeight="31.0" prefWidth="168.0" text="This word has:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="166.0" prefHeight="31.0" prefWidth="75.0" text="letters">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="letter_count" layoutX="304.0" layoutY="168.0" prefHeight="28.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="410.0" prefHeight="31.0" prefWidth="82.0" text="Points:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="304.0" layoutY="412.0" prefHeight="28.0" prefWidth="56.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="wrongright" layoutX="450.0" layoutY="237.0" prefHeight="28.0" prefWidth="98.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      </children>
+   </AnchorPane>

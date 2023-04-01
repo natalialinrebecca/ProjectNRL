@@ -16,6 +16,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class VocabController {
     public TextField cNewWordTxt;
@@ -30,11 +32,10 @@ public class VocabController {
     private Label welcomeText;
 
     public TableColumn<Vocab, String> vocabWord = new TableColumn<>("Word");
-    public ObservableList<Vocab> vocab = FXCollections.observableArrayList();
 
     @FXML
     protected void onHelloButtonClick() throws IOException {
-        StartApplication.setRoot("Hello-uno-view");
+        StartApplication.setRoot("vocab-view");
     }
 
     public void initialize() {
@@ -44,7 +45,7 @@ public class VocabController {
         vocabWord.setCellValueFactory(new PropertyValueFactory<Vocab, String>("newWord"));
 
         contactsTable.getColumns().add(vocabWord);
-        contactsTable.setItems(vocab);
+        contactsTable.setItems(StartApplication.vocab);
 
         contactsTable.setRowFactory(rowClick -> {
             TableRow<Vocab> row = new TableRow<>();
@@ -71,7 +72,15 @@ public class VocabController {
             //convert JSON file to Java Object
             ArrayList<Vocab> imports = gson.fromJson(reader, new TypeToken<ArrayList<Vocab>>() {
             }.getType());
-            vocab = FXCollections.observableArrayList(imports);
+
+            Collections.sort(imports, new Comparator<Vocab>() {
+                @Override
+                public int compare(Vocab vocab1, Vocab vocab2) {
+                    return vocab1.getNewWord().compareTo(vocab2.getNewWord());
+                }
+            });
+
+            StartApplication.vocab = FXCollections.observableArrayList(imports);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,7 +89,7 @@ public class VocabController {
         public void saveBtn(ActionEvent actionEvent) {
 
         boolean exists = false;
-        for (Vocab c: vocab) {
+        for (Vocab c: StartApplication.vocab) {
             if(c.getNewWord().equals(cNewWordTxt.getText())) {
                 exists = true;
                 System.out.println("Already exists");
@@ -88,12 +97,12 @@ public class VocabController {
         }
 
         if(exists == false) {
-            vocab.add(new Vocab(cNewWordTxt.getText(), cDefinitionTxt.getText(), cTranslationTxt.getText(), cPronunciationTxt.getText(), cLinksTxt.getText()));
+            StartApplication.vocab.add(new Vocab(cNewWordTxt.getText(), cDefinitionTxt.getText(), cTranslationTxt.getText(), cPronunciationTxt.getText(), cLinksTxt.getText()));
         }
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             try(FileWriter writer = new FileWriter("vocab.json")) {
-                gson.toJson(vocab, writer);
+                gson.toJson(StartApplication.vocab, writer);
                 System.out.println("Saved. ");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -103,13 +112,21 @@ public class VocabController {
         public void delBtn(ActionEvent actionEVent){
              ObservableList<Vocab> tempVocab = FXCollections.observableArrayList();
 
-            for (Vocab v: vocab) {
+            for (Vocab v: StartApplication.vocab) {
                if(!v.getNewWord().equals(cNewWordTxt.getText())) {
                   tempVocab.add(v);
                }
             }
-            vocab.removeAll();
-            vocab=tempVocab;
-            contactsTable.setItems(vocab);
+            StartApplication.vocab.removeAll();
+            StartApplication.vocab=tempVocab;
+            contactsTable.setItems(StartApplication.vocab);
         }
+
+    public void signoutBtn(ActionEvent actionEvent) throws IOException {
+        StartApplication.setRoot("login-view");
+    }
+
+    public void startBtn(ActionEvent actionEvent) throws IOException {
+        StartApplication.setRoot("play-view");
+    }
 }

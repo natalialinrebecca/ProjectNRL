@@ -1,6 +1,8 @@
 package com.example.tutorial;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -8,6 +10,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class StartApplication extends Application {
+    public static ObservableList<Vocab> vocab = FXCollections.observableArrayList();
+
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("login-view.fxml"));

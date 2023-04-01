@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="605.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.LoginController">
    <center>
-        <AnchorPane prefHeight="400.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="400.0" prefWidth="601.0" style="-fx-background-color: B3DAF4;" BorderPane.alignment="CENTER">
             <children>
                 <Label layoutX="159.0" layoutY="280.0" text="Username:" textAlignment="CENTER">
                     <font>

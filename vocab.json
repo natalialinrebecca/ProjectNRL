@@ -1,30 +1,37 @@
 [
   {
-    "newWord": "word",
-    "definition": "def",
-    "translation": "tra",
-    "pronunciation": "pro",
-    "links": "links"
+    "newWord": "water",
+    "definition": "liquid",
+    "translation": "agua",
+    "pronunciation": "warer",
+    "links": "drink"
   },
   {
-    "newWord": "fg",
-    "definition": "gf",
-    "translation": "fg",
-    "pronunciation": "fg",
-    "links": "fg"
+    "newWord": "eat",
+    "definition": "eat",
+    "translation": "comer",
+    "pronunciation": "it",
+    "links": "food"
   },
   {
     "newWord": "airpod",
-    "definition": "tech",
-    "translation": "tec",
-    "pronunciation": "tel",
-    "links": "cable"
+    "definition": "earbud",
+    "translation": "audifono",
+    "pronunciation": "erpod",
+    "links": "tech"
   },
   {
-    "newWord": "agua",
-    "definition": "liquido",
-    "translation": "water",
-    "pronunciation": "awa",
-    "links": "tomar"
+    "newWord": "write",
+    "definition": "write",
+    "translation": "escribir",
+    "pronunciation": "rait",
+    "links": "pen"
+  },
+  {
+    "newWord": "drop",
+    "definition": "drop",
+    "translation": "caer",
+    "pronunciation": "drop",
+    "links": "fall"
   }
 ]

@@ -7,28 +7,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="440.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.VocabController">
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: B3DAF4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.VocabController">
       <children>
-          <Label fx:id="welcomeText" layoutX="88.0" layoutY="49.0" prefHeight="30.0" prefWidth="203.0" text="MY VOCABULARY">
+          <Label fx:id="welcomeText" layoutX="199.0" layoutY="60.0" prefHeight="30.0" prefWidth="203.0" text="MY VOCABULARY">
          <font>
             <Font size="25.0" />
          </font></Label>
-          <Button layoutX="520.0" layoutY="400.0" onAction="#onHelloButtonClick" text="GAME!" />
-      <TableView fx:id="contactsTable" layoutX="39.0" layoutY="87.0" prefHeight="298.0" prefWidth="301.0" />
-      <Label layoutX="361.0" layoutY="138.0" prefHeight="17.0" prefWidth="65.0" text="New Word" />
-      <Label layoutX="365.0" layoutY="178.0" prefHeight="17.0" prefWidth="56.0" text="Definition" />
-      <Label layoutX="352.0" layoutY="265.0" prefHeight="17.0" prefWidth="78.0" text="Pronunciation" />
-      <Label layoutX="363.0" layoutY="221.0" prefHeight="17.0" prefWidth="65.0" text="Translation" />
-      <Label layoutX="379.0" layoutY="306.0" prefHeight="17.0" prefWidth="56.0" text="Links" />
+          <Button layoutX="519.0" layoutY="445.0" onAction="#startBtn" text="GAME!" />
+      <TableView fx:id="contactsTable" layoutX="39.0" layoutY="111.0" prefHeight="298.0" prefWidth="301.0" style="-fx-background-color: D8F9E4;" />
+      <Label layoutX="361.0" layoutY="147.0" prefHeight="17.0" prefWidth="65.0" text="New Word" />
+      <Label layoutX="365.0" layoutY="187.0" prefHeight="17.0" prefWidth="56.0" text="Definition" />
+      <Label layoutX="354.0" layoutY="274.0" prefHeight="17.0" prefWidth="78.0" text="Pronunciation" />
+      <Label layoutX="361.0" layoutY="230.0" prefHeight="17.0" prefWidth="65.0" text="Translation" />
+      <Label layoutX="379.0" layoutY="315.0" prefHeight="17.0" prefWidth="56.0" text="Links" />
 
-      <TextField fx:id="cDefinitionTxt" layoutX="439.0" layoutY="174.0" prefWidth="137.0" />
-      <TextField fx:id="cNewWordTxt" layoutX="440.0" layoutY="134.0" prefHeight="25.0" prefWidth="136.0" />
-      <TextField fx:id="cPronunciationTxt" layoutX="439.0" layoutY="260.0" prefHeight="25.0" prefWidth="137.0" />
-      <TextField fx:id="cTranslationTxt" layoutX="440.0" layoutY="216.0" prefHeight="25.0" prefWidth="137.0" />
-      <TextField fx:id="cLinksTxt" layoutX="440.0" layoutY="301.0" prefHeight="25.0" prefWidth="136.0" />
+      <TextField fx:id="cDefinitionTxt" layoutX="439.0" layoutY="182.0" prefWidth="137.0" />
+      <TextField fx:id="cNewWordTxt" layoutX="440.0" layoutY="142.0" prefHeight="25.0" prefWidth="136.0" />
+      <TextField fx:id="cPronunciationTxt" layoutX="439.0" layoutY="269.0" prefHeight="25.0" prefWidth="137.0" />
+      <TextField fx:id="cTranslationTxt" layoutX="439.0" layoutY="225.0" prefHeight="25.0" prefWidth="137.0" />
+      <TextField fx:id="cLinksTxt" layoutX="440.0" layoutY="310.0" prefHeight="25.0" prefWidth="136.0" />
 
-      <Button layoutX="531.0" layoutY="359.0" mnemonicParsing="false" onAction="#saveBtn" text="Save" />
-      <Button layoutX="365.0" layoutY="359.0" mnemonicParsing="false" onAction="#delBtn" text="Delete Word" />
-      <Button layoutX="39.0" layoutY="400.0" onAction="#onHelloButtonClick" text="SIGN OUT" />
+      <Button layoutX="525.0" layoutY="372.0" mnemonicParsing="false" onAction="#saveBtn" text="Save" />
+      <Button layoutX="364.0" layoutY="372.0" mnemonicParsing="false" onAction="#delBtn" text="Delete Word" />
+      <Button layoutX="39.0" layoutY="445.0" onAction="#signoutBtn" text="SIGN OUT" />
       </children>
    </AnchorPane>

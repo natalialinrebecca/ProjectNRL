@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="605.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutorial.LoginController">
    <center>
-        <AnchorPane prefHeight="400.0" prefWidth="601.0" style="-fx-background-color: B3DAF4;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: B3DAF4;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="159.0" layoutY="280.0" text="Username:" textAlignment="CENTER">
+                <Label layoutX="157.0" layoutY="332.0" text="Username:" textAlignment="CENTER">
                     <font>
                         <Font name="Josefin Sans" size="23.0" />
                     </font>
@@ -26,10 +26,20 @@
                   <Font size="45.0" />
                </font>
             </Label>
-            <TextField fx:id="cUsernameTxt" layoutX="291.0" layoutY="281.0" onAction="#checkLogin" />
-            <Label layoutX="200.0" layoutY="192.0" text="PLEASE LOG IN">
+            <TextField fx:id="cUsernameTxt" layoutX="291.0" layoutY="333.0" onAction="#checkLogin" />
+            <Label layoutX="209.0" layoutY="269.0" text="PLEASE LOG IN">
                <font>
                   <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="162.0" prefHeight="24.0" prefWidth="199.0" text="Add new key words and" textAlignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="184.0" layoutY="193.0" prefHeight="24.0" prefWidth="234.0" text="test your knowledge playing! " textAlignment="CENTER">
+               <font>
+                  <Font size="19.0" />
                </font>
             </Label>
             </children>

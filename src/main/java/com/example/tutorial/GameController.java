@@ -67,17 +67,23 @@ public class GameController {
 
     TextField[] letters = {let1,let2,let3,let4,let5,let6,let7,let8};
     public void initialize(){
-
     }
+
     public static String getRandom() {
         Random random = new Random();
         String randomWord = StartApplication.vocab.get(random.nextInt(StartApplication.vocab.size())).getNewWord();
         return randomWord;
     }
 
-    int guessed=0;
-    public void CheckInput(){
+    public void GiveNumLetters(){
+        String numletters = String.valueOf(randomWord.length());
+        letter_count.setText(numletters);
+    }
 
+    int guessed = 0;
+    int score = 0;
+
+    public void CheckInput(){
         String str = input.getText();
         if (randomWord.contains(str)) {
             int index = 0;
@@ -87,7 +93,9 @@ public class GameController {
                 if (String.valueOf(c).equals(str)) {
                     setLetter(index, Character.toString(c));
                     wrongright.setText("Right!");
-                    //point + 100
+                    score += 100;
+                    String scoretext = String.valueOf(score);
+                    points.setText(scoretext);
                     guessed++;
                     System.out.println(guessed + " out of " + randomWord.length());
 
@@ -100,6 +108,9 @@ public class GameController {
         }
         else {
             wrongright.setText("Wrong");
+            score -= 10;
+            String scoretext = String.valueOf(score);
+            points.setText(scoretext);
         }
     }
     public void setLetter(int index,String str){
@@ -132,6 +143,7 @@ public class GameController {
     String randomWord;
     public void changewordBtn(ActionEvent actionEvent) throws IOException {
         randomWord = getRandom();
+        GiveNumLetters();
         let1.setText("");
         let2.setText("");
         let3.setText("");

@@ -30,5 +30,6 @@
       <Button layoutX="525.0" layoutY="372.0" mnemonicParsing="false" onAction="#saveBtn" text="Save" />
       <Button layoutX="364.0" layoutY="372.0" mnemonicParsing="false" onAction="#delBtn" text="Delete Word" />
       <Button layoutX="39.0" layoutY="445.0" onAction="#signoutBtn" text="SIGN OUT" />
+      <Button layoutX="256.0" layoutY="420.0" mnemonicParsing="false" onAction="#searchBtn" text="Search" />
       </children>
    </AnchorPane>

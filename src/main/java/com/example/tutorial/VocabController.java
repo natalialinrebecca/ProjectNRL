@@ -19,6 +19,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 public class VocabController {
     public TextField cNewWordTxt;
     public TextField cDefinitionTxt;
@@ -121,6 +129,39 @@ public class VocabController {
             StartApplication.vocab=tempVocab;
             contactsTable.setItems(StartApplication.vocab);
         }
+
+    public void searchBtn(ActionEvent actionEvent) throws Exception {
+        String word = cNewWordTxt.getText();
+        String url = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word;
+
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        // optional default is GET
+        con.setRequestMethod("GET");
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        JSONParser parser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) parser.parse(response.toString());
+        JSONObject jsonObject = (JSONObject) jsonArray.get(0);
+
+        JSONArray meaningsArray = (JSONArray) jsonObject.get("meanings");
+        JSONObject meaningsObject = (JSONObject) meaningsArray.get(0);
+
+        JSONArray definitionsArray = (JSONArray) meaningsObject.get("definitions");
+        JSONObject definitionsObject = (JSONObject) definitionsArray.get(0);
+
+        String definition = (String) definitionsObject.get("definition");
+        cDefinitionTxt.setText(definition);
+    }
 
     public void signoutBtn(ActionEvent actionEvent) throws IOException {
         StartApplication.setRoot("login-view");

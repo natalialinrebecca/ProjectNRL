@@ -23,13 +23,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class VocabController {
     public TextField cNewWordTxt;
-    public TextField cDefinitionTxt;
+    public TextArea cDefinitionTxt;
     public TextField cTranslationTxt;
     public TextField cPronunciationTxt;
     public TextField cLinksTxt;
@@ -132,8 +133,8 @@ public class VocabController {
 
     public void searchBtn(ActionEvent actionEvent) throws Exception {
         String word = cNewWordTxt.getText();
-        String url = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word;
-
+        String url = ("https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word);
+        System.out.println(url);
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 

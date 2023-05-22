@@ -63,7 +63,7 @@ public class GameController {
     @FXML
     Label points;
     @FXML
-    Label wrongright;
+    Label wrongRight;
 
     TextField[] letters = {let1,let2,let3,let4,let5,let6,let7,let8};
     public void initialize(){
@@ -76,8 +76,8 @@ public class GameController {
     }
 
     public void GiveNumLetters(){
-        String numletters = String.valueOf(randomWord.length());
-        letter_count.setText(numletters);
+        String numLetters = String.valueOf(randomWord.length());
+        letter_count.setText(numLetters);
     }
 
     int guessed = 0;
@@ -92,25 +92,25 @@ public class GameController {
 
                 if (String.valueOf(c).equals(str)) {
                     setLetter(index, Character.toString(c));
-                    wrongright.setText("Right!");
+                    wrongRight.setText("Right!");
                     score += 100;
-                    String scoretext = String.valueOf(score);
-                    points.setText(scoretext);
+                    String scoreText = String.valueOf(score);
+                    points.setText(scoreText);
                     guessed++;
                     System.out.println(guessed + " out of " + randomWord.length());
 
                     if(guessed == randomWord.length()) {
-                        wrongright.setText("Done!");
+                        wrongRight.setText("Done!");
                     }
                 }
                 index++;
             }
         }
         else {
-            wrongright.setText("Wrong");
+            wrongRight.setText("Wrong");
             score -= 10;
-            String scoretext = String.valueOf(score);
-            points.setText(scoretext);
+            String scoreText = String.valueOf(score);
+            points.setText(scoreText);
         }
     }
     public void setLetter(int index,String str){
@@ -132,16 +132,16 @@ public class GameController {
             let8.setText(str);
     }
 
-    public void signoutBtn(ActionEvent actionEvent) throws IOException {
+    public void signOutBtn(ActionEvent actionEvent) throws IOException {
         StartApplication.setRoot("login-view");
     }
 
-    public void myvocabBtn(ActionEvent actionEvent) throws IOException {
+    public void myVocabBtn(ActionEvent actionEvent) throws IOException {
         StartApplication.setRoot("vocab-view");
     }
 
     String randomWord;
-    public void changewordBtn(ActionEvent actionEvent) throws IOException {
+    public void changeWordBtn(ActionEvent actionEvent) throws IOException {
         randomWord = getRandom();
         GiveNumLetters();
         let1.setText("");

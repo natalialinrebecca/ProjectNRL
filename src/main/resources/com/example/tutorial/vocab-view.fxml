@@ -30,7 +30,7 @@
 
       <Button layoutX="525.0" layoutY="361.0" mnemonicParsing="false" onAction="#saveBtn" text="Save" />
       <Button layoutX="379.0" layoutY="361.0" mnemonicParsing="false" onAction="#delBtn" text="Delete Word" />
-      <Button layoutX="39.0" layoutY="445.0" onAction="#signoutBtn" text="SIGN OUT" />
+      <Button layoutX="39.0" layoutY="445.0" onAction="#signOutBtn" text="SIGN OUT" />
       <Button layoutX="361.0" layoutY="173.0" mnemonicParsing="false" onAction="#searchBtn" text="Search" />
       </children>
    </AnchorPane>

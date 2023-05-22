@@ -12,9 +12,9 @@
          <font>
             <Font size="25.0" />
          </font></Label>
-          <Button layoutX="507.0" layoutY="460.0" onAction="#myvocabBtn" text="MY VOCAB" />
-      <Button layoutX="25.0" layoutY="460.0" onAction="#signoutBtn" text="SIGN OUT" />
-      <Button layoutX="195.0" layoutY="88.0" mnemonicParsing="false" onAction="#changewordBtn" prefHeight="47.0" prefWidth="218.0" style="-fx-background-color: B7F3D8;" text="PRESS, THEN PLAY!">
+          <Button layoutX="507.0" layoutY="460.0" onAction="#myVocabBtn" text="MY VOCAB" />
+      <Button layoutX="25.0" layoutY="460.0" onAction="#signOutBtn" text="SIGN OUT" />
+      <Button layoutX="195.0" layoutY="88.0" mnemonicParsing="false" onAction="#changeWordBtn" prefHeight="47.0" prefWidth="218.0" style="-fx-background-color: B7F3D8;" text="PRESS, THEN PLAY!">
          <font>
             <Font size="21.0" />
          </font>
@@ -104,7 +104,7 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Label fx:id="wrongright" layoutX="450.0" layoutY="237.0" prefHeight="28.0" prefWidth="98.0">
+      <Label fx:id="wrongRight" layoutX="450.0" layoutY="237.0" prefHeight="28.0" prefWidth="98.0">
          <font>
             <Font size="23.0" />
          </font>

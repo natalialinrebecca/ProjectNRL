@@ -164,7 +164,7 @@ public class VocabController {
         cDefinitionTxt.setText(definition);
     }
 
-    public void signoutBtn(ActionEvent actionEvent) throws IOException {
+    public void signOutBtn(ActionEvent actionEvent) throws IOException {
         StartApplication.setRoot("login-view");
     }
 

@@ -1,5 +1,12 @@
 [
   {
+    "newWord": "air",
+    "definition": "The substance constituting earth\u0027s atmosphere, particularly:",
+    "translation": "aire",
+    "pronunciation": "er",
+    "links": "oxygen"
+  },
+  {
     "newWord": "apple",
     "definition": "red fruit",
     "translation": "manzana",
@@ -21,6 +28,20 @@
     "links": "food"
   },
   {
+    "newWord": "people",
+    "definition": "Used as plural of person; a body of human beings considered generally or collectively; a group of two or more persons.",
+    "translation": "aire",
+    "pronunciation": "er",
+    "links": "oxygen"
+  },
+  {
+    "newWord": "watch",
+    "definition": "",
+    "translation": "reloj",
+    "pronunciation": "wach",
+    "links": "time"
+  },
+  {
     "newWord": "water",
     "definition": "liquid",
     "translation": "agua",
@@ -33,12 +54,5 @@
     "translation": "escribir",
     "pronunciation": "rait",
     "links": "pen"
-  },
-  {
-    "newWord": "watch",
-    "definition": "",
-    "translation": "reloj",
-    "pronunciation": "wach",
-    "links": "time"
   }
 ]

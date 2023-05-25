@@ -40,7 +40,7 @@ public class VocabController {
     @FXML
     private Label welcomeText;
 
-    public TableColumn<Vocab, String> vocabWord = new TableColumn<>("Word");
+    public TableColumn<Vocab, String> vocabWord = new TableColumn<>("Word"); //name/label of column
 
     @FXML
     protected void onHelloButtonClick() throws IOException {
@@ -49,7 +49,7 @@ public class VocabController {
 
     public void initialize() {
 
-        loadVocab();
+        loadVocab(); //load words from the vocabulary list
 
         vocabWord.setCellValueFactory(new PropertyValueFactory<Vocab, String>("newWord"));
 
@@ -84,7 +84,7 @@ public class VocabController {
 
             Collections.sort(imports, new Comparator<Vocab>() {
                 @Override
-                public int compare(Vocab vocab1, Vocab vocab2) {
+                public int compare(Vocab vocab1, Vocab vocab2) { //to sort in alphabetical order, compare first letter of words
                     return vocab1.getNewWord().compareTo(vocab2.getNewWord());
                 }
             });
@@ -101,18 +101,18 @@ public class VocabController {
         for (Vocab c: StartApplication.vocab) {
             if(c.getNewWord().equals(cNewWordTxt.getText())) {
                 exists = true;
-                System.out.println("Already exists");
+                System.out.println("Already exists"); //to not save duplicates
             }
         }
 
         if(exists == false) {
             StartApplication.vocab.add(new Vocab(cNewWordTxt.getText(), cDefinitionTxt.getText(), cTranslationTxt.getText(), cPronunciationTxt.getText(), cLinksTxt.getText()));
-        }
+        } //save new word and all its aspects (definition, translation, pronunciation, links)
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             try(FileWriter writer = new FileWriter("vocab.json")) {
                 gson.toJson(StartApplication.vocab, writer);
-                System.out.println("Saved. ");
+                System.out.println("Saved. "); //save to GSON file
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -126,19 +126,19 @@ public class VocabController {
                   tempVocab.add(v);
                }
             }
-            StartApplication.vocab.removeAll();
+            StartApplication.vocab.removeAll(); //remove word from list if delete button is clicked
             StartApplication.vocab=tempVocab;
             contactsTable.setItems(StartApplication.vocab);
         }
 
     public void searchBtn(ActionEvent actionEvent) throws Exception {
         String word = cNewWordTxt.getText();
-        String url = ("https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word);
+        String url = ("https://api.dictionaryapi.dev/api/v2/entries/en_US/" + word); //to search definition in dictionary API
         System.out.println(url);
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-        // optional default is GET
+        //optional default is GET
         con.setRequestMethod("GET");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -161,14 +161,14 @@ public class VocabController {
         JSONObject definitionsObject = (JSONObject) definitionsArray.get(0);
 
         String definition = (String) definitionsObject.get("definition");
-        cDefinitionTxt.setText(definition);
+        cDefinitionTxt.setText(definition); //set definition in definition box
     }
 
     public void signOutBtn(ActionEvent actionEvent) throws IOException {
         StartApplication.setRoot("login-view");
-    }
+    } //change view to login page if sing out button is clicked
 
     public void startBtn(ActionEvent actionEvent) throws IOException {
         StartApplication.setRoot("play-view");
-    }
+    } //change view to game page if game button is clicked
 }

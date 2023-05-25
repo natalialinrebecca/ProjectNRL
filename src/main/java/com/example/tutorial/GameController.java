@@ -1,45 +1,16 @@
 package com.example.tutorial;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import org.w3c.dom.Text;
-
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
-import java.util.ArrayList;
 import java.util.Random;
 
 
 public class GameController {
 
-
-    private void loadVocab() {
-        //load vocab from saved file.
-        //Open and read Json for any previously saved data.
-
-        Gson gson = new Gson();
-        try (Reader reader = new FileReader("vocab.json")) {
-            //convert JSON file to Java Object
-            ArrayList<Vocab> imports = gson.fromJson(reader, new TypeToken<ArrayList<Vocab>>() {
-            }.getType());
-
-            StartApplication.vocab = FXCollections.observableArrayList(imports);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
+    //variables for the GUI
     @FXML
     TextField let1;
     @FXML
@@ -65,55 +36,55 @@ public class GameController {
     @FXML
     Label wrongRight;
 
-    TextField[] letters = {let1,let2,let3,let4,let5,let6,let7,let8};
+    TextField[] letters = {let1,let2,let3,let4,let5,let6,let7,let8}; //a letter for each text box
     public void initialize(){
     }
 
-    public static String getRandom() {
+    public static String getRandom() { //get random word from vocabulary list
         Random random = new Random();
         String randomWord = StartApplication.vocab.get(random.nextInt(StartApplication.vocab.size())).getNewWord();
         return randomWord;
     }
 
-    public void GiveNumLetters(){
+    public void GiveNumLetters(){ //display the number of letters in the word randomly selected
         String numLetters = String.valueOf(randomWord.length());
         letter_count.setText(numLetters);
     }
 
-    int guessed = 0;
-    int score = 0;
+    int guessed = 0; //int for correct guesses
+    int score = 0; //int for user's score
 
     public void CheckInput(){
-        String str = input.getText();
-        if (randomWord.contains(str)) {
+        String str = input.getText(); //set the user's input as a string
+        if (randomWord.contains(str)) { //check if the word selected contains the user's input (letter guessed)
             int index = 0;
-            for(int i=0; i<randomWord.length(); i++) {
+            for(int i=0; i<randomWord.length(); i++) { //check every index of the word selected
                 char c = randomWord.charAt(i);
 
-                if (String.valueOf(c).equals(str)) {
-                    setLetter(index, Character.toString(c));
-                    wrongRight.setText("Right!");
-                    score += 100;
-                    String scoreText = String.valueOf(score);
+                if (String.valueOf(c).equals(str)) { //if the current index (letter it's looking at) matches the user's input
+                    setLetter(index, Character.toString(c)); //if true, display the letter in the text box
+                    wrongRight.setText("Right!"); //display "Right!" for affirmation
+                    score += 100; //add 100 points to user's score
+                    String scoreText = String.valueOf(score); //turn int into string
                     points.setText(scoreText);
-                    guessed++;
-                    System.out.println(guessed + " out of " + randomWord.length());
+                    guessed++; //add 1 to correct guesses
+                    System.out.println(guessed + " out of " + randomWord.length()); //keep track of correct guesses
 
                     if(guessed == randomWord.length()) {
-                        wrongRight.setText("Done!");
+                        wrongRight.setText("Done!"); //Display "Done!" once all the whole word has been guessed correctly
                     }
                 }
                 index++;
             }
         }
         else {
-            wrongRight.setText("Wrong");
-            score -= 10;
+            wrongRight.setText("Wrong"); //display "Wrong" is the letter guessed is not in the word
+            score -= 10; //subtract 10 points from score
             String scoreText = String.valueOf(score);
-            points.setText(scoreText);
+            points.setText(scoreText); //update score
         }
     }
-    public void setLetter(int index,String str){
+    public void setLetter(int index,String str){ //set one letter of the word for each box in the game
         if(index==0)
             let1.setText(str);
         else if(index==1)
@@ -133,18 +104,18 @@ public class GameController {
     }
 
     public void signOutBtn(ActionEvent actionEvent) throws IOException {
-        StartApplication.setRoot("login-view");
+        StartApplication.setRoot("login-view"); //go to Log In page
     }
 
     public void myVocabBtn(ActionEvent actionEvent) throws IOException {
-        StartApplication.setRoot("vocab-view");
+        StartApplication.setRoot("vocab-view"); //go to vocabulary list page
     }
 
     String randomWord;
-    public void changeWordBtn(ActionEvent actionEvent) throws IOException {
+    public void changeWordBtn(ActionEvent actionEvent) throws IOException { //restart the game and select a new random word from the list
         randomWord = getRandom();
         GiveNumLetters();
-        let1.setText("");
+        let1.setText(""); //make text boxes blank again
         let2.setText("");
         let3.setText("");
         let4.setText("");

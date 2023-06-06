@@ -77,6 +77,9 @@ public class GameController {
                 index++;
             }
         }
+        else if (isInteger(str)) {
+            wrongRight.setText("No integers!"); //notify to not use integers
+        }
         else {
             wrongRight.setText("Wrong"); //display "Wrong" is the letter guessed is not in the word
             score -= 10; //subtract 10 points from score
@@ -84,6 +87,16 @@ public class GameController {
             points.setText(scoreText); //update score
         }
     }
+
+    private boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     public void setLetter(int index,String str){ //set one letter of the word for each box in the game
         if(index==0)
             let1.setText(str);

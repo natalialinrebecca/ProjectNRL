@@ -35,6 +35,13 @@
     "links": "oxygen"
   },
   {
+    "newWord": "rain",
+    "definition": "Condensed water falling from a cloud.",
+    "translation": "lluvia",
+    "pronunciation": "rein",
+    "links": "water"
+  },
+  {
     "newWord": "watch",
     "definition": "",
     "translation": "reloj",
@@ -49,10 +56,10 @@
     "links": "drink"
   },
   {
-    "newWord": "write",
-    "definition": "write",
-    "translation": "escribir",
-    "pronunciation": "rait",
-    "links": "pen"
+    "newWord": "chair",
+    "definition": "An item of furniture used to sit on or in, comprising a seat, legs, back, and sometimes arm rests, for use by one person. Compare stool, couch, sofa, settee, loveseat and bench.",
+    "translation": "silla",
+    "pronunciation": "cher",
+    "links": "sit"
   }
 ]

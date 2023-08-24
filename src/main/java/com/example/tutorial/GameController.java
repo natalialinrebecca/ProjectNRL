@@ -90,10 +90,10 @@ public class GameController {
 
     private boolean isInteger(String str) {
         try {
-            Integer.parseInt(str);
-            return true;
+            Integer.parseInt(str); //try to convert the input string to an integer
+            return true; //input string can be parsed as an integer
         } catch (NumberFormatException e) {
-            return false;
+            return false; //input string cannot be parsed as an integer
         }
     }
 
